@@ -3,7 +3,11 @@ import StateListItem from'./StateListItem';
 
 const ExpenseList = (props) => (
   <div>
-    <StateListItem />
+    {
+      props.mxStates.map((mxState) => (
+        <StateListItem key={mxState.slug} {...mxState} />
+      ))
+    }
   </div>
 );
 

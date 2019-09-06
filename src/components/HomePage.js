@@ -1,8 +1,9 @@
 import React from 'react';
 import StateList from './StateList';
+import mxStates from '../data/mxStates';
 
 export default () => (
   <div>
-    <StateList />
+    <StateList mxStates={mxStates} />
   </div>
 );

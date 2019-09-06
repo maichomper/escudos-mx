@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const StateListItem = ({ id, name }) => (
+const StateListItem = ({ slug, title, img }) => (
   <div>
-    <h3><Link to={`/edit/${id}`}>{name}</Link></h3>
+    <img 
+      src={img}
+      alt={`Coat of Arms of ${title} `} />
+    <Link to={`/state/${slug}`}><h3>{title}</h3></Link>
   </div>
 );
 
