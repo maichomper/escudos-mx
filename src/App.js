@@ -1,11 +1,20 @@
 import React from 'react';
-import './styles/styles.scss';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
 import AppRouter from './routers/AppRouter';
+import { loadMxStates } from './actions/mxStates';
+import mxStates from './data/mxStates';
+import './styles/styles.scss';
+
+const store = configureStore();
+store.dispatch(loadMxStates(mxStates));
 
 function App() {
   return ( 
     <div className="App">
-      <AppRouter />
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
     </div>
   );
 }
